@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Homer API</title>
+        <link rel="stylesheet" href="static/css/index.css">
+    </head>
+    <body>
+        <nav>
+            <div id="container" class="container">
+                <img id="menu" src="static/menu.svg" class="menu-logo" onclick="togglemenu()">
+                <ul id="ul">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#endpoints">Endpoints</a></li>
+                    <li><a href="#">Examples</a></li>
+                    <li><a href="https://github.com/AtharvaKDev/Homer-API">Github</a></li>
+                </ul>
+            </div>
+            <ul id="menu-ul">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#endpoints">Endpoints</a></li>
+                <li><a href="https://github.com/AtharvaKDev/Homer-API">Github</a></li>
+            </ul>
+        </nav>
+        <div class="main">
+            <h1>Homer API</h1>
+            <p>Free Dark Jokes, Dad Jokes, Facts, and Questions API!</p>
+            <button onclick="window.location.href = '/api/darkjoke'">Try Now</button>
+        </div>
+        <div class="endpoints" id="endpoints">
+            <h2>Endpoints</h2>
+            <div class="darkjoke">
+                <h3>/api/darkjoke</h3>
+                <p>Returns a Dark Joke from the api.</p>
+                <p>Total Jokes: 38</p>
+                <p>Ratelimit: 100 Requests Per Minute</p>
+                <p>Format: JSON</p>
+                <p>Output Example:</p>
+                <div class="codearea">
+                    <p>{</p>
+                    <p id="data">"punchline": "To get to the other side... of the cemetery.",</p>
+                    <p id="data">"buildup": "Why did the chicken cross the road"</p>
+                    <p>}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="joke">
+                <h3>/api/joke</h3>
+                <p>Returns a Joke from the api.</p>
+                <p>Total Jokes: 250+</p>
+                <p>Ratelimit: 100 Requests Per Minute</p>
+                <p>Format: JSON</p>
+                <p>Output Example:</p>
+                <div class="codearea">
+                    <p>{</p>
+                    <p id="data">"punchline": "Turns out it was the refrigerator all along.",</p>
+                    <p id="data">"buildup": "I thought the dryer was shrinking my clothes"</p>
+                    <p>}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="fact">
+                <h3>/api/fact</h3>
+                <p>Returns a Fact from the api.</p>
+                <p>Total Facts: 2500</p>
+                <p>Ratelimit: 100 Requests Per Minute</p>
+                <p>Format: JSON</p>
+                <p>Output Example:</p>
+                <div class="codearea">
+                    <p>{</p>
+                    <p id="data">"fact": "The strongest muscle in the body is the jaw."</p>
+                    <p>}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="question">
+                <h3>/api/question</h3>
+                <p>Returns a Question from the api.</p>
+                <p>Total Questions: 499</p>
+                <p>Ratelimit: 100 Requests Per Minute</p>
+                <p>Format: JSON</p>
+                <p>Output Example:</p>
+                <div class="codearea">
+                    <p>{</p>
+                    <p id="data">"question": "If you found out you were going to die tomorrow, what would you do today?"</p>
+                    <p>}</p>
+                </div>
+            </div>
+        </div>
+        <script src="static/js/index.js"></script>
+    </body>
+</html>
