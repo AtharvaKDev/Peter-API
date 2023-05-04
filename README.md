@@ -6,7 +6,7 @@ Free Darkjokes, Jokes, Facts, Questions API
 
 <h3>/api/darkjoke</h3>
                 <p>Returns a Dark Joke from the api.</p>
-                <p>Total Jokes: 38</p>
+                <p>Total Jokes: 100</p>
                 <p>Ratelimit: 100 Requests Per Minute</p>
                 <p>Format: JSON</p>
             <hr>
