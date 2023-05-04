@@ -1,10 +1,7 @@
 from flask import Flask, jsonify, render_template
-from flask_limiter import Limiter
 import random
 
 app = Flask(__name__)
-
-limiter = Limiter(app)
 
 with open("data/thirty.txt") as jokes:
     darkjokes_text = jokes.read()
@@ -24,7 +21,6 @@ def index():
 
 
 @app.route('/api/darkjoke')
-@limiter.limit("100/minute")
 def darkjoke():
     jokes_list = darkjokes_text.splitlines()
     selected_joke = random.choice(jokes_list)
@@ -37,7 +33,6 @@ def darkjoke():
     })
 
 @app.route('/api/joke')
-@limiter.limit("100/minute")
 def joke():
     jokes_list = jokes_text.splitlines()
     selected_joke = random.choice(jokes_list)
@@ -55,7 +50,6 @@ def joke():
 
 
 @app.route('/api/question')
-@limiter.limit("100/minute")
 def question():
     question_list = questions.splitlines()
     selected_question = random.choice(question_list)
@@ -64,7 +58,6 @@ def question():
     })
 
 @app.route('/api/fact')
-@limiter.limit("100/minute")
 def fact():
     fact_list = questions.splitlines()
     selected_fact = random.choice(fact_list)
