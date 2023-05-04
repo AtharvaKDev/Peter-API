@@ -1,32 +1,70 @@
-# Homer-API 🤠
 
-Normal Jokes, Dark Jokes, Facts, Questions API For Free!
+# Homer API 🤠
+Free API for Jokes, Facts, Questions and more coming soon!
 
-<h1>Endpoints:</h1>
+## API Reference
 
-<h3>/api/darkjoke</h3>
-                <p>Returns a Dark Joke from the api.</p>
-                <p>Total Jokes: 100</p>
-                <p>Ratelimit: 100 Requests Per Minute</p>
-                <p>Format: JSON</p>
-            <hr>
-                <h3>/api/joke</h3>
-                <p>Returns a Joke from the api.</p>
-                <p>Total Jokes: 250+</p>
-                <p>Ratelimit: 100 Requests Per Minute</p>
-                <p>Format: JSON</p>
-            <hr>
-            <div class="fact">
-                <h3>/api/fact</h3>
-                <p>Returns a Fact from the api.</p>
-                <p>Total Facts: 2500</p>
-                <p>Ratelimit: 100 Requests Per Minute</p>
-                <p>Format: JSON</p>
-            </div>
-            <hr>
-            <div class="question">
-                <h3>/api/question</h3>
-                <p>Returns a Question from the api.</p>
-                <p>Total Questions: 499</p>
-                <p>Ratelimit: 100 Requests Per Minute</p>
-                <p>Format: JSON</p>
+#### Get Joke
+
+```http
+  GET /api/joke
+```
+
+| Endpoint | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `joke` | `string` | Returns a Joke from the API. |
+
+#### Get Darkjoke
+
+```http
+  GET /api/darkjoke
+```
+
+| Endpoint | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `darkjoke` | `string` | Returns a Dark-Joke from the API. |
+
+#### Get Fact
+
+```http
+  GET /api/fact
+```
+
+| Endpoint | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `fact` | `string` | Returns a Fact from the API. |
+
+#### Get Question
+
+```http
+  GET /api/question
+```
+
+| Endpoint | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `question` | `string` | Returns a Question from the API. |
+
+
+## Usage/Examples
+
+```python
+import requests
+
+url = requests.get("https://homer-api.up.railway.app/api/darkjoke")
+result = url.json()
+
+buildup = result['buildup']
+punchline = result['punchline']
+joke = buildup + "? " + punchline
+print(joke)
+```
+
+## Output:
+```json
+Why did the blind man fall into the well? Because he couldn't see that well.
+```
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
