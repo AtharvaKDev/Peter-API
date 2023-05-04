@@ -2,6 +2,8 @@
 # Homer API 🤠
 Free API for Jokes, Facts, Questions and more coming soon!
 
+<a href="https://homer-api.up.railway.app/api/darkjoke">API URL</a>
+
 ## API Reference
 
 #### Get Joke
