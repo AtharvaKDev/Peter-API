@@ -13,7 +13,7 @@ with open("data/questions.txt") as q:
     questions = q.read()
 
 with open("data/facts.txt") as f:
-    questions = f.read()
+    facts = f.read()
 
 @app.route('/')
 def index():
@@ -59,7 +59,7 @@ def question():
 
 @app.route('/api/fact')
 def fact():
-    fact_list = questions.splitlines()
+    fact_list = facts.splitlines()
     selected_fact = random.choice(fact_list)
     return jsonify({
         'fact': selected_fact
