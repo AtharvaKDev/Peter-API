@@ -1,6 +1,6 @@
-# Homer-API
+# Homer-API 🤠
 
-Free Darkjokes, Jokes, Facts, Questions API
+Normal Jokes, Dark Jokes, Facts, Questions API For Free!
 
 <h1>Endpoints:</h1>
 
