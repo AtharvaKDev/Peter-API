@@ -1,10 +1,10 @@
 # Homer-API
+
 Free Darkjokes, Jokes, Facts, Questions API
 
 <h1>Endpoints:</h1>
 
-<div class="darkjoke">
-                <h3>/api/darkjoke</h3>
+<h3>/api/darkjoke</h3>
                 <p>Returns a Dark Joke from the api.</p>
                 <p>Total Jokes: 38</p>
                 <p>Ratelimit: 100 Requests Per Minute</p>
@@ -15,8 +15,6 @@ Free Darkjokes, Jokes, Facts, Questions API
                     <p id="data">"punchline": "To get to the other side... of the cemetery.",</p>
                     <p id="data">"buildup": "Why did the chicken cross the road"</p>
                     <p>}</p>
-                </div>
-            </div>
             <hr>
             <div class="joke">
                 <h3>/api/joke</h3>
@@ -25,10 +23,11 @@ Free Darkjokes, Jokes, Facts, Questions API
                 <p>Ratelimit: 100 Requests Per Minute</p>
                 <p>Format: JSON</p>
                 <p>Output Example:</p>
-                ```{
+                ```
+              {
                       "punchline": "Turns out it was the refrigerator all along.",
                       "buildup": "I thought the dryer was shrinking my clothes"
-                   }
+              }
                 ```
             </div>
             <hr>
@@ -57,5 +56,3 @@ Free Darkjokes, Jokes, Facts, Questions API
                     <p>{</p>
                     <p id="data">"question": "If you found out you were going to die tomorrow, what would you do today?"</p>
                     <p>}</p>
-                </div>
-            </div>
