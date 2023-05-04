@@ -25,12 +25,11 @@ Free Darkjokes, Jokes, Facts, Questions API
                 <p>Ratelimit: 100 Requests Per Minute</p>
                 <p>Format: JSON</p>
                 <p>Output Example:</p>
-                <div class="codearea">
-                    <p>{</p>
-                    <p id="data">"punchline": "Turns out it was the refrigerator all along.",</p>
-                    <p id="data">"buildup": "I thought the dryer was shrinking my clothes"</p>
-                    <p>}</p>
-                </div>
+                ```{
+                      "punchline": "Turns out it was the refrigerator all along.",
+                      "buildup": "I thought the dryer was shrinking my clothes"
+                   }
+                ```
             </div>
             <hr>
             <div class="fact">
