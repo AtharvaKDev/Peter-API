@@ -6,6 +6,12 @@ Free API for Jokes, Facts, Questions and more coming soon!
 
 ## API Reference
 
+#### Get Version
+Returns the Version and Last Update Date of the API
+```http
+  GET /api/version
+```
+
 #### Get Roast
 
 ```http
