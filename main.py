@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, render_template
 import random
+import os
 
 app = Flask(__name__)
 
@@ -15,10 +16,23 @@ with open("data/questions.txt") as q:
 with open("data/facts.txt") as f:
     facts = f.read()
 
+with open("data/roasts.txt") as r:
+    roasts = r.read()
+
 @app.route('/')
 def index():
     return render_template("index.html")
 
+@app.route('/playground')
+def playground():
+    return render_template("playground.html")
+
+@app.route('/api/version')
+def version():
+    return jsonify({
+        'version' : '1.0.0',
+        'Last Updated' : '4 May 2023 '
+    })
 
 @app.route('/api/darkjoke')
 def darkjoke():
@@ -63,6 +77,15 @@ def fact():
     selected_fact = random.choice(fact_list)
     return jsonify({
         'fact': selected_fact
+    })
+
+@app.route('/api/roast/<username>')
+def roast(username):
+    roast_list = roasts.splitlines()
+    selected_roast = random.choice(roast_list)
+    return jsonify({
+        'roast': f"{username}, {selected_roast}",
+        'target': username
     })
 
 if __name__ == '__main__':
