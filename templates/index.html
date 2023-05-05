@@ -12,14 +12,14 @@
             <div id="container" class="container">
                 <img id="menu" src="static/menu.svg" class="menu-logo" onclick="togglemenu()">
                 <ul id="ul">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="#endpoints">Endpoints</a></li>
-                    <li><a href="#">Examples</a></li>
+                    <li><a href="/playground">Playground</a></li>
                     <li><a href="https://github.com/AtharvaKDev/Homer-API">Github</a></li>
                 </ul>
             </div>
             <ul id="menu-ul">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#endpoints">Endpoints</a></li>
                 <li><a href="https://github.com/AtharvaKDev/Homer-API">Github</a></li>
             </ul>
@@ -31,10 +31,31 @@
         </div>
         <div class="endpoints" id="endpoints">
             <h2>Endpoints</h2>
+            <div class="version">
+                <h3>/api/version</h3>
+                <p>Returns a the current API version</p>
+                <p>Format: JSON</p>
+            </div>
+            <hr>
+            <div class="roast">
+                <h3>/api/roast/(username)</h3>
+                <p>Roast someone.</p>
+                <p>Total Roasts: 100</p>
+                <p>Required Parameters: username</p>
+                <p>Format: JSON</p>
+                <p>Output Example:</p>
+                <div class="codearea">
+                    <p>{</p>
+                    <p id="data">"roast": "Homer, Your existence is an insult to evolution."</p>
+                    <p id="data">"target": "Homer"</p>
+                    <p>}</p>
+                </div>
+            </div>
+            <hr>
             <div class="darkjoke">
                 <h3>/api/darkjoke</h3>
                 <p>Returns a Dark Joke from the api.</p>
-                <p>Total Jokes: 38</p>
+                <p>Total Jokes: 120</p>
                 <p>Ratelimit: 100 Requests Per Minute</p>
                 <p>Format: JSON</p>
                 <p>Output Example:</p>
