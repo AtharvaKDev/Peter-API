@@ -6,6 +6,18 @@ Free API for Jokes, Facts, Questions and more coming soon!
 
 ## API Reference
 
+#### Get Roast
+
+```http
+  GET /api/roast/<username>
+```
+
+| Endpoint | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `roast/<username>` | `string` | Returns a Joke from the API. |
+
+Required Parameters: `username`
+
 #### Get Joke
 
 ```http
