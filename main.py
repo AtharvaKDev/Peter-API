@@ -1,23 +1,24 @@
 from flask import Flask, jsonify, render_template, send_from_directory
 import random
+import json
 import os
 
 app = Flask(__name__)
 
-with open("data/thirty.txt") as jokes:
-    darkjokes_text = jokes.read()
+with open("data/questions.json") as q:
+    questions = json.load(q)
 
-with open("data/jokes.txt", encoding='utf-8') as j:
-    jokes_text = j.read()
-
-with open("data/questions.txt") as q:
-    questions = q.read()
-
-with open("data/facts.txt") as f:
-    facts = f.read()
+with open("data/facts.json", "r") as f:
+    facts = json.load(f)
 
 with open("data/roasts.txt") as r:
     roasts = r.read()
+
+with open("data/darkjokes.json", "r") as g:
+    darkjokes = json.load(g)
+
+with open("data/jokes.json", "r", encoding='utf-8') as j:
+    jokes = json.load(j)
 
 @app.route('/')
 def index():
@@ -41,48 +42,24 @@ def version():
 
 @app.route('/api/darkjoke')
 def darkjoke():
-    jokes_list = darkjokes_text.splitlines()
-    selected_joke = random.choice(jokes_list)
-    joke_parts = selected_joke.split('?')
-    joke_setup = joke_parts[0]
-    joke_punchline = joke_parts[1]
-    return jsonify({
-        'punchline': joke_punchline.strip(),
-        'buildup': joke_setup.strip()
-    })
+    random_joke = random.choice(darkjokes["jokes"])
+    return jsonify({'setup': random_joke['buildup'], 'punchline': random_joke['punchline'], 'id': random_joke['id']})
 
 @app.route('/api/joke')
 def joke():
-    jokes_list = jokes_text.splitlines()
-    selected_joke = random.choice(jokes_list)
-    joke_parts = selected_joke.split('?')
-    if len(joke_parts) >= 2:
-        joke_setup = joke_parts[0]
-        joke_punchline = joke_parts[1]
-    else:
-        joke_setup = selected_joke
-        joke_punchline = ""
-    return jsonify({
-        'punchline': joke_punchline.strip(),
-        'buildup': joke_setup.strip()
-    })
+    random_joke = random.choice(jokes["jokes"])
+    return jsonify({'setup': random_joke['buildup'], 'punchline': random_joke['punchline'], 'id': random_joke['id']})
 
 
 @app.route('/api/question')
 def question():
-    question_list = questions.splitlines()
-    selected_question = random.choice(question_list)
-    return jsonify({
-        'question': selected_question
-    })
+    random_que = random.choice(questions["questions"])
+    return jsonify({'question': random_que['question'], 'id': random_que['id']})
 
 @app.route('/api/fact')
 def fact():
-    fact_list = facts.splitlines()
-    selected_fact = random.choice(fact_list)
-    return jsonify({
-        'fact': selected_fact
-    })
+    random_fact = random.choice(facts["facts"])
+    return jsonify({'fact': random_fact['fact'], 'id': random_fact['id']})
 
 @app.route('/api/roast/<username>')
 def roast(username):
