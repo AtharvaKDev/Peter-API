@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Homer API</title>
+        <title>Peter API</title>
         <link rel="stylesheet" href="static/css/index.css">
     </head>
     <body>
@@ -25,8 +25,8 @@
             </ul>
         </nav>
         <div class="main">
-            <h1>Homer API</h1>
-            <p>Free Dark Jokes, Dad Jokes, Facts, Roasts, and Questions API!</p>
+            <h1>Peter API</h1>
+            <p>Free Dark Jokes, Dad Jokes, Facts, Roasts and More!</p>
             <button onclick="window.location.href = '/api/darkjoke'">Try Now</button>
         </div>
         <div class="endpoints" id="endpoints">
@@ -48,6 +48,22 @@
                     <p>{</p>
                     <p id="data">"roast": "Homer, Your existence is an insult to evolution."</p>
                     <p id="data">"target": "Homer"</p>
+                    <p>}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="quote">
+                <h3>/api/quote</h3>
+                <p>Returns a Quote from the api.</p>
+                <p>Total Quotes: 120</p>
+                <p>Ratelimit: 100 Requests Per Minute</p>
+                <p>Format: JSON</p>
+                <p>Output Example:</p>
+                <div class="codearea">
+                    <p>{</p>
+                    <p id="data">"quote": "Strategy without tactics is the slowest route to victory. Tactics without strategy is the noise before defeat.",</p>
+                    <p id="data">"id": "1",</p>
+                    <p id="data">"author": "Sun Tzu"</p>
                     <p>}</p>
                 </div>
             </div>
