@@ -1,8 +1,8 @@
 
-# Homer API 🤠
+# Peter API 
 Free API for Jokes, Facts, Questions and more coming soon!
 
-<a href="https://homer-api.up.railway.app/api/darkjoke">API URL</a>
+<a href="https://peter-api.up.railway.app/api/version">API URL</a>
 
 ## API Reference
 
@@ -11,6 +11,16 @@ Returns the Version and Last Update Date of the API
 ```http
   GET /api/version
 ```
+
+#### Get Quote
+
+```http
+  GET /api/quote
+```
+
+| Endpoint | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `quote` | `string` | Returns a Quote from the API. |
 
 #### Get Roast
 
