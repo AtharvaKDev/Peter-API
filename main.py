@@ -67,7 +67,7 @@ def fact():
 @app.route('/api/quote')
 def quote():
     random_quote = random.choice(quotes["quotes"])
-    return jsonify({'quote': random_quote['quote'], 'author' : random_quote['author'], 'id': random_quote['id']})
+    return jsonify({'quote': random_quote['quote'], 'author' : random_quote['author'], 'id': f"{random_quote['id']}"})
 
 @app.route('/api/roast/<username>')
 def roast(username):
