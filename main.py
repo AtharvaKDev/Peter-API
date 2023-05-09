@@ -8,6 +8,9 @@ app = Flask(__name__)
 with open("data/questions.json") as q:
     questions = json.load(q)
 
+with open("data/quotes.json", "r") as qo:
+    quotes = json.load(qo)
+
 with open("data/facts.json", "r") as f:
     facts = json.load(f)
 
@@ -60,6 +63,11 @@ def question():
 def fact():
     random_fact = random.choice(facts["facts"])
     return jsonify({'fact': random_fact['fact'], 'id': random_fact['id']})
+
+@app.route('/api/quote')
+def quote():
+    random_quote = random.choice(quotes["quotes"])
+    return jsonify({'quote': random_quote['quote'], 'author' : random_quote['author'], 'id': random_quote['id']})
 
 @app.route('/api/roast/<username>')
 def roast(username):
