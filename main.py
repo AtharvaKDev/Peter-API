@@ -11,8 +11,8 @@ with open("data/questions.json") as q:
 with open("data/facts.json", "r") as f:
     facts = json.load(f)
 
-with open("data/roasts.txt") as r:
-    roasts = r.read()
+with open("data/roasts.json") as r:
+    roasts = json.load(r)
 
 with open("data/darkjokes.json", "r") as g:
     darkjokes = json.load(g)
@@ -63,11 +63,11 @@ def fact():
 
 @app.route('/api/roast/<username>')
 def roast(username):
-    roast_list = roasts.splitlines()
-    selected_roast = random.choice(roast_list)
+    random_roast = random.choice(roasts["roasts"])
     return jsonify({
-        'roast': f"{username}, {selected_roast}",
-        'target': username
+        'roast': f"{username}, {random_roast['roast']}",
+        'target': username,
+        'id' : random_roast['id']
     })
 
 if __name__ == '__main__':
