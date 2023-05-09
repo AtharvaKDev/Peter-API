@@ -80,7 +80,7 @@ Required Parameters: `username`
 ```python
 import requests
 
-url = requests.get("https://homer-api.up.railway.app/api/darkjoke")
+url = requests.get("https://peter-api.up.railway.app/api/darkjoke")
 result = url.json()
 
 buildup = result['buildup']
